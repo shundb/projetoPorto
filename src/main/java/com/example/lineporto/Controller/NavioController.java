@@ -22,13 +22,25 @@ public class NavioController {
         return "navio-form.html"; 
     }
 
-    @PostMapping("/navios/atracar")
+
+    @PostMapping("/navios/formulario")
     public String atracarNavio(@ModelAttribute NavioInfoClass navioInfoClass, Model model) {
-        if (atracacaoservice.podeAtracar(navioInfoClass)) {
-            model.addAttribute("mensagem", "Navio pode atracar");
-        } else {
-            model.addAttribute("mensagem", "Navio não pode atracar");
+        boolean podeAtracar = atracacaoservice.podeAtracar(navioInfoClass);
+
+        if(podeAtracar){
+            model.addAttribute("mensagem", "o navio pode atracar");
+
+        }else {
+            model.addAttribute("mensagem", "o navio não pode atracar: motivo:"); 
+
+
         }
-        return "resultado-atracacao";
+        model.addAttribute("navio", navioInfoClass);
+        return "redirect:/navios/atracar";
+    }
+    @GetMapping("/navios/atracar")
+    public String resultadoAtracacao(Model model){
+        model.addAttribute("navio", new NavioInfoClass());
+        return "resultado-atracacao.html";
     }
 }

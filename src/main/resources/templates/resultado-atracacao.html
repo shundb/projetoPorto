@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado da Atracação</title>
+</head>
+<body>
+    <h2>Resultado da Atracação</h2>
+    <p th:text="'Nome: ' + ${navio.nome}"></p>
+    <p th:text="'Empresa: ' + ${navio.empresa}"></p>
+    <p th:text="'Tipo de Carga: ' + ${navio.tipoCarga}"></p>
+    <p th:text="'Tamanho: ' + ${navio.tamanho}"></p>
+    <p th:text="'Largura: ' + ${navio.largura}"></p>
+    <p th:text="'Profundidade: ' + ${navio.profundidade}"></p>
+    <p th:text="${mensagem}"></p>
+</body>
+</html>

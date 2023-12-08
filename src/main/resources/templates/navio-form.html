@@ -7,10 +7,10 @@
 
 <body>
     <h2>Formulário de Navio</h2>
-    <form action="@{/navios/atracar}" method="post" th:object="${navio}">
+    <form action="#" th:action="@{/navios/formulario}" method="post" th:object="${navio}">
         <label for="nome">Nome do Navio:</label>
         <input type="text" id="nome" name="nome" th:field="*{nome}" required>
-    
+
         <label for="empresa">Empresa:</label>
         <input type="text" id="empresa" name="empresa" th:field="*{empresa}" required>
     
@@ -26,8 +26,16 @@
         <label for="profundidade">Profundidade do Navio:</label>
         <input type="number" id="profundidade" name="profundidade" th:field="*{profundidade}" required>
     
-        <button type="submit">Enviar</button>
+        <p><input type="submit" value="submit"></p>
     </form>
+
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+    </style>
 
 
 </body>
