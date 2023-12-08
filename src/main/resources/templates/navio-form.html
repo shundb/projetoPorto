@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Navio</title>
+</head>
+
+<body>
+    <h2>Formulário de Navio</h2>
+    <form action="/navios/formulario" method="post" th:object="${navio}">
+        <label for="nome">Nome do Navio:</label>
+        <input type="text" id="nome" name="nome" th:field="*{nome}" required>
+    
+        <label for="empresa">Empresa:</label>
+        <input type="text" id="empresa" name="empresa" th:field="*{empresa}" required>
+    
+        <label for="tipoCarga">Tipo de Carga:</label>
+        <input type="text" id="tipoCarga" name="tipoCarga" th:field="*{tipoCarga}" required>
+    
+        <label for="tamanho">Tamanho do Navio:</label>
+        <input type="number" id="tamanho" name="tamanho" th:field="*{tamanho}" required>
+    
+        <label for="largura">Largura do Navio:</label>
+        <input type="number" id="largura" name="largura" th:field="*{largura}" required>
+    
+        <label for="profundidade">Profundidade do Navio:</label>
+        <input type="number" id="profundidade" name="profundidade" th:field="*{profundidade}" required>
+    
+        <button type="submit">Enviar</button>
+    </form>
+
+
+</body>
+
+</html>
