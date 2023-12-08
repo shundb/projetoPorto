@@ -2,12 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Formulario Navio</title>
+    <title>Formulario de Navio</title>
 </head>
 
 <body>
     <h2>Formulário de Navio</h2>
-    <form action="/navios/formulario" method="post" th:object="${navio}">
+    <form action="@{/navios/atracar}" method="post" th:object="${navio}">
         <label for="nome">Nome do Navio:</label>
         <input type="text" id="nome" name="nome" th:field="*{nome}" required>
     
