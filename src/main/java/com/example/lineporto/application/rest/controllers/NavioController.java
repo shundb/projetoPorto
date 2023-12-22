@@ -51,6 +51,15 @@ public class NavioController {
 
         return ResponseEntity.ok(new DadosDetalhamentoNavioDTO(navio));
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity deleteNavio(@PathVariable Long id) {
+        var navio = repository.getReferenceById(id);
+        navio.delecaoLogica();
+
+        return ResponseEntity.noContent().build();
+    }
 }
 //    @GetMapping("/navios/formulario")
 //    public String mostrarFormulario (Model model){

@@ -27,6 +27,7 @@ public class Navio {
     private String produto;
     private String agente;
     private String empresa;
+    private Boolean ativo;
 
     public Navio(DadosCadastroNavioDTO dados) {
         this.imo = dados.imo();
@@ -37,6 +38,7 @@ public class Navio {
         this.produto = dados.produto();
         this.agente = dados.agente();
         this.empresa = dados.empresa();
+        this.ativo = true;
     }
 
     public void atualizarInformacao(DadosAtualizacaoNavio dados) {
@@ -66,6 +68,10 @@ public class Navio {
         if (dados.empresa() != null) {
             this.empresa = dados.empresa();
         }
+    }
+
+    public void delecaoLogica() {
+        this.ativo = false;
     }
 }
 
