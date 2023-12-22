@@ -1,12 +1,19 @@
-package com.example.lineporto.Navios;
+package com.example.lineporto.domain.entities.Navio;
 
 public class NavioInfoClass {
-    
+
+    private String imo;
     private String nome;
-    private String empresa;
+    private double comprimento;
+    private double largura;
+    private double dwt;
+
+//  Verificar se 1 navio pode ter mais de 1 tipo de produto embarcado,
+//  a relação é diferente se sim
+//  private String produto;
+    private String agente;
     private String tipoCarga;
     private double tamanho;
-    private double largura;
     private double profundidade;
     
     public String getNome() {
