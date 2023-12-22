@@ -1,6 +1,7 @@
 package com.example.lineporto.domain.entities.Navio;
 
 
+import com.example.lineporto.domain.dtos.DadosAtualizacaoNavio;
 import com.example.lineporto.domain.dtos.DadosCadastroNavioDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -36,6 +37,35 @@ public class Navio {
         this.produto = dados.produto();
         this.agente = dados.agente();
         this.empresa = dados.empresa();
+    }
+
+    public void atualizarInformacao(DadosAtualizacaoNavio dados) {
+
+        if (dados.imo() != null) {
+            this.imo = dados.imo();
+        }
+
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
+        }
+
+        this.comprimento = dados.comprimento();
+
+        this.largura = dados.largura();
+
+        this.dwt = dados.dwt();
+
+        if (dados.produto() != null) {
+            this.produto = dados.produto();
+        }
+
+        if (dados.agente() != null) {
+            this.agente = dados.agente();
+        }
+
+        if (dados.empresa() != null) {
+            this.empresa = dados.empresa();
+        }
     }
 }
 

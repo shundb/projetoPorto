@@ -1,5 +1,6 @@
 package com.example.lineporto.application.rest.controllers;
 
+import com.example.lineporto.domain.dtos.DadosAtualizacaoNavio;
 import com.example.lineporto.domain.dtos.DadosCadastroNavioDTO;
 import com.example.lineporto.domain.dtos.DadosDetalhamentoNavioDTO;
 import com.example.lineporto.domain.dtos.DadosListagemNavioDTO;
@@ -40,6 +41,15 @@ public class NavioController {
 
         return ResponseEntity.created(uri).body(new DadosDetalhamentoNavioDTO(navio));
 
+    }
+
+    @PutMapping("/{id}")
+    @Transactional
+    public ResponseEntity putNavio(@RequestBody @Valid DadosAtualizacaoNavio dados, @PathVariable Long id) {
+        var navio = repository.getReferenceById(id);
+        navio.atualizarInformacao(dados);
+
+        return ResponseEntity.ok(new DadosDetalhamentoNavioDTO(navio));
     }
 }
 //    @GetMapping("/navios/formulario")
