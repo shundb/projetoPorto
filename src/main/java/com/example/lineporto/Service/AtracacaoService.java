@@ -1,8 +1,8 @@
 package com.example.lineporto.Service;
 
-import com.example.lineporto.Navios.NavioInfoClass;
+import com.example.lineporto.domain.entities.Navio.Navio;
 
 public interface AtracacaoService {
-    boolean podeAtracar(NavioInfoClass navioInfoClass);
+    boolean podeAtracar(Navio navioInfoClass);
 }
 
